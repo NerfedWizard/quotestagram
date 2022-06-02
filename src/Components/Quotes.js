@@ -5,6 +5,13 @@ import './../App.css';
 function Quotes() {
     const [index, setIndex] = useState(0);
     const [searched, setSearched] = useState('');
+    const [noQuotes] = useState([{
+        Quote: "Sorry we don't have any quotes for you",
+        Author: "Many authors are waiting to inspire you,",
+        Category: "Maybe start with Happy",
+        Tags: ["you could also try Sad", "or Angry"],
+        Popularity: 0.000000000000001,
+    }]);
     const [quoteList, setQuoteList] = useState([{
         Quote: quotes[0].Quote,
         Author: quotes[0].Author,
@@ -53,6 +60,10 @@ function Quotes() {
                     setQuoteList(catSer);
                     setFlag(true);
                 }
+            } else {
+                setQuoteList(noQuotes);
+                // alert("Sorry, but we can't find a quote to match");
+
             }
         }
     }
@@ -64,7 +75,7 @@ function Quotes() {
                 <input className="custom-input" type="search" onChange={handleSearch} placeholder="Search...">
                 </input>
                 <button className="custom-button" onClick={onSubmit}>Search</button>
-                {flag ? <button justify='right' className="custom-button" onClick={handleNext}>Next {quoteList.length - index}</button> : null
+                {flag ? <button className="custom-button" onClick={handleNext}>Next {quoteList.length - index}</button> : null
                 }
             </nav>
             <main className="card border-primary">
