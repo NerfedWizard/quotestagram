@@ -24,6 +24,5 @@ yarn-error.log*
 
 src/*
 public/*
-build/static/css/*.map
-build/static/js/*.map
-static.json 
+static.json
+package-lock.json 
