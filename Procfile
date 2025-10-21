@@ -1,0 +1,1 @@
+gcloud run deploy weddinghomepage --source=. --region=us-central1 --set-env-vars=GOOGLE_FUNCTION_TARGET=node index.js
