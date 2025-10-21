@@ -98,8 +98,7 @@ function Quotes() {
             setFlag(true);
         }
     }
-    const handleHome = () => {
-        alert("Feature Coming Soon");
+    const handleHome = (e) => {
         navigate("/");
     }
     const backButton = () => {

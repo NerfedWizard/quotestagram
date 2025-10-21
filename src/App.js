@@ -1,8 +1,9 @@
 import './App.css';
-import React from 'react';
+// import React from 'react';
 import Quotes from './Components/Quotes';
-// import Homepage from './Components/Homepage';
-import { BrowserRouter, Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import Homepage from './Components/Homepage';
+import Guestbook from './Components/Guestbook';
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
 
@@ -12,8 +13,9 @@ const App = () => {
         <div className="App" >
           <div className="App-header gradient">
             <Routes>
-              <Route path='/' element={<Quotes />} />
-              {/* <Route exact path='quotes' element={<Quotes />} /> */}
+              <Route path='/quotes' element={<Quotes />} />
+              <Route path='/' element={<Homepage />} />
+              <Route path='/guestbook' element={<Guestbook />} />
             </Routes>
           </div>
         </div>
